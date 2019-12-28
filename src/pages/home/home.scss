@@ -1,0 +1,24 @@
+.bienvenido {
+    background-image: url("/assets/imgs/bg-2.jpg");
+    height: 30vh;
+    background-position: center;
+    background-size: cover;
+}
+
+.trans{
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #000000, $alpha: .3);
+    color: white;
+}
+
+.flex-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.comenzar-btn{
+    margin-top: 15px;
+}
