@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 
 /**
  * Generated class for the RegistroPage page.
@@ -14,11 +15,24 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class RegistroPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  inputText:string;
+  key:string = 'username';
+
+  constructor(private storage: Storage, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegistroPage');
+  }
+
+  saveData(){
+    this.storage.set(this.key, this.inputText);
+  }
+
+  loadData(){
+    this.storage.get(this.key).then((val) => {
+      console.log("Tu nombre es: ", val);
+    });
   }
 
 }
